@@ -15,6 +15,11 @@ const SideBar = () => {
         {"name": "settings", "iconName": "settings"}
     ]
 
+    const botNavBtnsList = [
+        {"name": "help", "iconName": "help"},
+        {"name": "log out", "iconName": "logout"}
+    ]
+
     /* TEST */
     const [menuOptionClicked, setMenuOptionClicked] = useState<string>(navBtnsList[0].name);
 
@@ -51,14 +56,13 @@ const SideBar = () => {
                             ))}
                         </div>
                         <div className='flex flex-col gap-2 items-start'>
-                            <button className={navButtonsClassName}>
-                                <Icon name="help" className='!text-[30px]' />
-                                Help
-                            </button>
-                            <button className={navButtonsClassName}>
-                                <Icon name="logout" className='!text-[30px]' />
-                                Log out
-                            </button>
+                            {botNavBtnsList.map((btn) => (
+                                <button key={btn.name}
+                                className={`${navButtonsClassName}`}>
+                                    <Icon name={btn.iconName} />
+                                    {btn.name}
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>
