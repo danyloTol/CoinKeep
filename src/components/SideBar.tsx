@@ -1,5 +1,6 @@
 import { Icon } from '../components/Icon';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const SideBar = () => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -47,12 +48,15 @@ const SideBar = () => {
                     <div className='flex flex-col h-full justify-between px-1 py-5'>
                         <div className='flex flex-col gap-2 items-start'>
                             {navBtnsList.map((btn) => (
-                                <button key={btn.name} 
-                                        onClick={() => {setMenuOptionClicked(btn.name)}} 
+                                <Link to={`/${btn.name}`}
+                                        key={btn.name} 
+                                        onClick={() => {setMenuOptionClicked(btn.name);
+                                                        setIsMenuOpened(false);
+                                        }} 
                                         className={`${navButtonsClassName} ${(menuOptionClicked === btn.name) && "bg-brand"}`}>
                                     <Icon name={btn.iconName} />
                                     {btn.name}
-                                </button>
+                                </Link>
                             ))}
                         </div>
                         <div className='flex flex-col gap-2 items-start'>
