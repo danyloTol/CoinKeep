@@ -6,8 +6,22 @@ const SideBar = () => {
 
     const navButtonsClassName = "flex flex-row gap-3 items-center text-[26px] px-2 py-1 rounded-full";
 
+    const navBtnsList = [
+        {"name": "dashboard", "iconName": "dashboard"},
+        {"name": "transactions", "iconName": "swap_horiz"},
+        {"name": "wallet", "iconName": "wallet"},
+        {"name": "goals", "iconName": "target"},
+        {"name": "budget", "iconName": "paid"},
+        {"name": "settings", "iconName": "settings"}
+    ]
+
+    const botNavBtnsList = [
+        {"name": "help", "iconName": "help"},
+        {"name": "log out", "iconName": "logout"}
+    ]
+
     /* TEST */
-    const [menuOptionClicked, setMenuOptionClicked] = useState<string>("dashboard");
+    const [menuOptionClicked, setMenuOptionClicked] = useState<string>(navBtnsList[0].name);
 
     return (
         <>
@@ -32,46 +46,23 @@ const SideBar = () => {
                     </button>
                     <div className='flex flex-col h-full justify-between px-1 py-5'>
                         <div className='flex flex-col gap-2 items-start'>
-                            <button onClick={() => {setMenuOptionClicked("dashboard")}} className={`${navButtonsClassName} 
-                                                ${(menuOptionClicked === "dashboard") && "bg-brand"}`}>
-                                <Icon name="dashboard" className='!text-[30px]' />
-                                Dashboard
-                            </button>
-                            <button onClick={() => {setMenuOptionClicked("transactions")}} className={`${navButtonsClassName} 
-                                                ${(menuOptionClicked === "transactions") && "bg-brand"}`}>
-                                <Icon name="swap_horiz" className='!text-[30px]' />
-                                Transactions
-                            </button>
-                            <button onClick={() => {setMenuOptionClicked("wallet")}} className={`${navButtonsClassName} 
-                                                ${(menuOptionClicked === "wallet") && "bg-brand"}`}>
-                                <Icon name="wallet" className='!text-[30px]' />
-                                Wallet
-                            </button>
-                            <button onClick={() => {setMenuOptionClicked("goals")}} className={`${navButtonsClassName} 
-                                                ${(menuOptionClicked === "goals") && "bg-brand"}`}>
-                                <Icon name="target" className='!text-[30px]' />
-                                Goals
-                            </button>
-                            <button onClick={() => {setMenuOptionClicked("budget")}} className={`${navButtonsClassName} 
-                                                ${(menuOptionClicked === "budget") && "bg-brand"}`}>
-                                <Icon name="paid" className='!text-[30px]' />
-                                Budget
-                            </button>
-                            <button onClick={() => {setMenuOptionClicked("settings")}} className={`${navButtonsClassName} 
-                                                ${(menuOptionClicked === "settings") && "bg-brand"}`}>
-                                <Icon name="settings" className='!text-[30px]' />
-                                Settings
-                            </button>
+                            {navBtnsList.map((btn) => (
+                                <button key={btn.name} 
+                                        onClick={() => {setMenuOptionClicked(btn.name)}} 
+                                        className={`${navButtonsClassName} ${(menuOptionClicked === btn.name) && "bg-brand"}`}>
+                                    <Icon name={btn.iconName} />
+                                    {btn.name}
+                                </button>
+                            ))}
                         </div>
                         <div className='flex flex-col gap-2 items-start'>
-                            <button className={navButtonsClassName}>
-                                <Icon name="help" className='!text-[30px]' />
-                                Help
-                            </button>
-                            <button className={navButtonsClassName}>
-                                <Icon name="logout" className='!text-[30px]' />
-                                Log out
-                            </button>
+                            {botNavBtnsList.map((btn) => (
+                                <button key={btn.name}
+                                className={`${navButtonsClassName}`}>
+                                    <Icon name={btn.iconName} />
+                                    {btn.name}
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>
