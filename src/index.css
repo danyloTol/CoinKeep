@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-brand: #FFD000;
   --color-bg-sidebar: #636363;
 
   --color-text-primary-light: #000000;

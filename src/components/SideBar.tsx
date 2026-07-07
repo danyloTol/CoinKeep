@@ -4,7 +4,10 @@ import { useState } from 'react';
 const SideBar = () => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
 
-    const navButtonsClassName = "flex flex-row gap-3 items-center text-[26px]";
+    const navButtonsClassName = "flex flex-row gap-3 items-center text-[26px] px-2 py-1 rounded-full";
+
+    /* TEST */
+    const [menuOptionClicked, setMenuOptionClicked] = useState<string>("dashboard");
 
     return (
         <>
@@ -29,27 +32,33 @@ const SideBar = () => {
                     </button>
                     <div className='flex flex-col h-full justify-between px-1 py-5'>
                         <div className='flex flex-col gap-2 items-start'>
-                            <button className={navButtonsClassName}>
+                            <button onClick={() => {setMenuOptionClicked("dashboard")}} className={`${navButtonsClassName} 
+                                                ${(menuOptionClicked === "dashboard") && "bg-brand"}`}>
                                 <Icon name="dashboard" className='!text-[30px]' />
                                 Dashboard
                             </button>
-                            <button className={navButtonsClassName}>
+                            <button onClick={() => {setMenuOptionClicked("transactions")}} className={`${navButtonsClassName} 
+                                                ${(menuOptionClicked === "transactions") && "bg-brand"}`}>
                                 <Icon name="swap_horiz" className='!text-[30px]' />
                                 Transactions
                             </button>
-                            <button className={navButtonsClassName}>
+                            <button onClick={() => {setMenuOptionClicked("wallet")}} className={`${navButtonsClassName} 
+                                                ${(menuOptionClicked === "wallet") && "bg-brand"}`}>
                                 <Icon name="wallet" className='!text-[30px]' />
                                 Wallet
                             </button>
-                            <button className={navButtonsClassName}>
+                            <button onClick={() => {setMenuOptionClicked("goals")}} className={`${navButtonsClassName} 
+                                                ${(menuOptionClicked === "goals") && "bg-brand"}`}>
                                 <Icon name="target" className='!text-[30px]' />
                                 Goals
                             </button>
-                            <button className={navButtonsClassName}>
+                            <button onClick={() => {setMenuOptionClicked("budget")}} className={`${navButtonsClassName} 
+                                                ${(menuOptionClicked === "budget") && "bg-brand"}`}>
                                 <Icon name="paid" className='!text-[30px]' />
                                 Budget
                             </button>
-                            <button className={navButtonsClassName}>
+                            <button onClick={() => {setMenuOptionClicked("settings")}} className={`${navButtonsClassName} 
+                                                ${(menuOptionClicked === "settings") && "bg-brand"}`}>
                                 <Icon name="settings" className='!text-[30px]' />
                                 Settings
                             </button>
