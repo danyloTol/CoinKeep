@@ -10,6 +10,10 @@ body {
 @theme {
   --color-brand: #FFD000;
   --color-bg-sidebar: #636363;
+  --color-bg-success: #B7FFC5;
+  --color-secondary-btn: #292929;
+  --color-text-success: #036900;
 
   --color-text-primary-light: #000000;
+  --color-text-secondary-light: #747474;
 }

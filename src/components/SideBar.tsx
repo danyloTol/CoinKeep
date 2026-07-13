@@ -1,6 +1,6 @@
 import { Icon } from '../components/Icon';
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);

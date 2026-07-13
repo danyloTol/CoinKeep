@@ -1,6 +1,6 @@
 interface IconProps {
-  name: string; // назва іконки з сайту Google (напр. "menu", "close")
-  className?: string; // для Tailwind класів
+  name: string;
+  className?: string;
 }
 
 export const Icon = ({name, className = ""}: IconProps) => {
