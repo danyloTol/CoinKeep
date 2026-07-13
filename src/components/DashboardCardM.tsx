@@ -1,4 +1,5 @@
 import { WidgetMBudget } from './DashboardWidgetMBudget';
+import { WidgetMSavingGoals } from './DashboardWidgetMSavingGoals';
 
 interface CardProps {
     widget: "budget" | "saving goals";
@@ -9,7 +10,7 @@ const LegendListClassName = "flex flex-row gap-0.5 items-center";
 const DashboardCardM = ({widget}: CardProps) => {
     return (
         <>
-            {(widget === "budget") ? <WidgetMBudget /> : <p></p>}
+            {(widget === "budget") ? <WidgetMBudget /> : (widget === "saving goals") && <WidgetMSavingGoals />}
         </>
     );
 };
