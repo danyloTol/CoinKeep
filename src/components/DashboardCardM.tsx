@@ -1,9 +1,17 @@
-const DashboardCardM = () => {
-    return (
-        <div className="w-2 h-2 bg-amber-800">
+import { WidgetMBudget } from './DashboardWidgetMBudget';
 
-        </div>
-    )
+interface CardProps {
+    widget: "budget" | "saving goals";
 }
 
-export default DashboardCardM
+const LegendListClassName = "flex flex-row gap-0.5 items-center";
+
+const DashboardCardM = ({widget}: CardProps) => {
+    return (
+        <>
+            {(widget === "budget") ? <WidgetMBudget /> : <p></p>}
+        </>
+    );
+};
+
+export default DashboardCardM;
