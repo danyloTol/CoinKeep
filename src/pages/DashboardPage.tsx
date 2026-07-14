@@ -1,5 +1,5 @@
 import Button from "../components/Button"
-import DashboardCardS from "../components/dashboard/dashboardCardsS/DashboardCardS"
+import DashboardCardS from "../components/dashboard/dashboardCardsS/CardS"
 import DashboardCardM from "../components/dashboard/dashboardCardsM/CardM"
 import DashboardCardL from "../components/dashboard/dashboardCardsL/CardL"
 
