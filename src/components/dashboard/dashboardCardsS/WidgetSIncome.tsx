@@ -11,7 +11,7 @@ const WidgetSIncome = ({thisMonthValue, lastMonthValue}: WidgetProps) => {
 
     const [integer, decimal] = formatted.split('.');
 
-    const changePercent = Math.round((thisMonthValue - lastMonthValue) / lastMonthValue * 100) / 10
+    const changePercent = Math.round((thisMonthValue - lastMonthValue) / lastMonthValue * 100);
 
     return (
         <div className="flex flex-col gap-4 py-2 px-6.25 outline-1 outline-text-secondary-light rounded-[30px] overflow-hidden">
