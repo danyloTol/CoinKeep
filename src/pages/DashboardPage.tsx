@@ -1,7 +1,7 @@
 import Button from "../components/Button"
-import DashboardCardS from "../components/DashboardCardS"
-import DashboardCardM from "../components/DashboardCardM"
-import DashboardCardL from "../components/DashboardCardL"
+import DashboardCardS from "../components/dashboard/dashboardCardsS/DashboardCardS"
+import DashboardCardM from "../components/dashboard/dashboardCardsM/CardM"
+import DashboardCardL from "../components/dashboard/dashboardCardsL/CardL"
 
 const DashboardPage = () => {
     return (

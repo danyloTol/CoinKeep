@@ -1,5 +1,5 @@
-import { WidgetLMoneyFlow } from './DashboardWidgetLMoneyFlow';
-import { WidgetLRecentTransactions } from './DashboardWidgetLRecentTransactions'
+import { WidgetLMoneyFlow } from './WidgetLMoneyFlow';
+import { WidgetLRecentTransactions } from './WidgetLRecentTransactions'
 
 interface CardProps {
     widget: "money flow" | "recent transactions";

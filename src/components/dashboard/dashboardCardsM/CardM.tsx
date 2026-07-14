@@ -1,5 +1,5 @@
-import { WidgetMBudget } from './DashboardWidgetMBudget';
-import { WidgetMSavingGoals } from './DashboardWidgetMSavingGoals';
+import { WidgetMBudget } from './WidgetMBudget';
+import { WidgetMSavingGoals } from './WidgetMSavingGoals';
 
 interface CardProps {
     widget: "budget" | "saving goals";
