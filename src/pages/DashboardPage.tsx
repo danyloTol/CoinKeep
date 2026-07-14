@@ -24,9 +24,9 @@ const DashboardPage = () => {
                 <DashboardCardM widget="saving goals" />
             </div>
             {/* LARGE CARDS SECTION */}
-            <div className="">
-                <DashboardCardL />
-                <DashboardCardL />
+            <div className="grid grid-cols-1 gap-2.25">
+                <DashboardCardL widget="money flow" />
+                <DashboardCardL widget="recent transactions" />
             </div>
         </div>
     );

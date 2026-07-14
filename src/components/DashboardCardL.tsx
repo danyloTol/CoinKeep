@@ -1,9 +1,17 @@
-const DashboardCardL = () => {
-    return (
-        <div className="w-2 h-2 bg-amber-800">
+import { WidgetLMoneyFlow } from './DashboardWidgetLMoneyFlow';
 
-        </div>
-    )
+interface CardProps {
+    widget: "money flow" | "recent transactions";
 }
 
-export default DashboardCardL
+const LegendListClassName = "flex flex-row gap-0.5 items-center";
+
+const DashboardCardL = ({widget}: CardProps) => {
+    return (
+        <>
+            {(widget === "money flow") ? <WidgetLMoneyFlow /> : (widget === "recent transactions") && <p></p>}
+        </>
+    );
+};
+
+export default DashboardCardL;
