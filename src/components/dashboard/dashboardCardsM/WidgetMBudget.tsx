@@ -1,7 +1,5 @@
 import { DoughnutChart } from './DoughnutChart';
 
-const legendListClassName = "flex flex-row gap-0.5 items-center";
-
 const budgetList = [
     {cat: 'Cafe & Restaurants', color: '#FFD000', value: 124},
     {cat: 'Transport', color: '#4C4C4C', value: 3356},
