@@ -1,4 +1,4 @@
-import { DoughnutChart } from './Doughnut';
+import { DoughnutChart } from './DoughnutChart';
 
 const LegendListClassName = "flex flex-row gap-0.5 items-center";
 
