@@ -1,3 +1,4 @@
+import { callback, color } from 'chart.js/helpers';
 import { Bar } from 'react-chartjs-2';
 
 interface BarChatProps {
@@ -30,11 +31,31 @@ export const BarChart = ({labels, incomeValues, expenseValues}: BarChatProps) =>
     const options = {
         responsive: true,
         plugins: {
-            legend: { display: false },
+            legend: { display: false }
         },
         scales: {
-            x: { grid: { display: false} },
-            y: { beginAtZero: true}
+            x: { grid: { display: false},
+                ticks: {
+                    color: '#747474',
+                    font: {
+                        family: 'Hammersmith One',
+                        size: 12,
+                    }
+                }
+            },
+            y: { 
+                beginAtZero: true,
+                ticks: {
+                    color: '#747474',
+                    font: {
+                        family: 'Hammersmith One',
+                        size: 12,
+                    },
+                    callback: function(value: any) {
+                        return '$' + value;
+                    }
+                }    
+            }
         }
     };
 
