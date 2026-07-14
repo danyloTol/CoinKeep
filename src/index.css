@@ -9,14 +9,21 @@ body {
 
 @theme {
   --color-brand: #FFD000;
-  --color-bg-sidebar: #636363;
-  --color-bg-success: #B7FFC5;
   --color-secondary-btn: #292929;
+  --color-brand-light: #FFF8D7;
+
   --color-text-success: #036900;
   --colot-text-danger: #690000;
-  --color-bg-danger: #FFB7B7;
-  --color-brand-light: #FFF8D7;
+
   --color-brand-hover: #987700;
+  --color-secondary-btn-hover: #434343;
+
+  --color-bg-secondary-light: #BFBFBF;
+  --color-bg-input: #AEAEAE;
+  --color-bg-sidebar: #636363;
+  --color-bg-success: #B7FFC5;
+  --color-bg-danger: #FFB7B7;
+  --color-bg-light: #F0F0F0;
 
   --color-text-primary-light: #000000;
   --color-text-secondary-light: #747474;
