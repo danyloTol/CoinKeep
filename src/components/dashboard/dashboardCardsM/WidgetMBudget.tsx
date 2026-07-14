@@ -1,6 +1,15 @@
 import { DoughnutChart } from './DoughnutChart';
 
-const LegendListClassName = "flex flex-row gap-0.5 items-center";
+const legendListClassName = "flex flex-row gap-0.5 items-center";
+
+const budgetList = [
+    {cat: 'Cafe & Restaurants', color: '#FFD000', value: 124},
+    {cat: 'Transport', color: '#4C4C4C', value: 3356},
+    {cat: 'Shopping', color: '#818181', value: 355},
+    {cat: 'Games', color: '#FFEFB3', value: 3455},
+    {cat: 'Bills', color: '#584501', value: 244},
+    {cat: 'Gifts', color: '#987700', value: 1236},
+]
 
 export const WidgetMBudget = () => {
     return (
@@ -8,35 +17,17 @@ export const WidgetMBudget = () => {
             <div className='flex flex-col gap-4'>
                 <h1 className='text-[24px] pt-3.75'>Budget</h1>
                 <ul>
-                    <li className={LegendListClassName}>
-                        <div className='w-2 h-2 bg-[#FFD000] rounded-full' />
-                        <p className='text-[12px] text-text-primary-light'>Cafe & Restaurants</p>
-                    </li>
-                    <li className={LegendListClassName}>
-                        <div className='w-2 h-2 bg-[#4C4C4C] rounded-full' />
-                        <p className='text-[12px] text-text-primary-light'>Cafe & Restaurants</p>
-                    </li>
-                    <li className={LegendListClassName}>
-                        <div className='w-2 h-2 bg-[#818181] rounded-full' />
-                        <p className='text-[12px] text-text-primary-light'>Cafe & Restaurants</p>
-                    </li>
-                    <li className={LegendListClassName}>
-                        <div className='w-2 h-2 bg-[#FFEFB3] rounded-full' />
-                        <p className='text-[12px] text-text-primary-light'>Cafe & Restaurants</p>
-                    </li>
-                    <li className={LegendListClassName}>
-                        <div className='w-2 h-2 bg-[#584501] rounded-full' />
-                        <p className='text-[12px] text-text-primary-light'>Cafe & Restaurants</p>
-                    </li>
-                    <li className={LegendListClassName}>
-                        <div className='w-2 h-2 bg-[#987700] rounded-full' />
-                        <p className='text-[12px] text-text-primary-light'>Cafe & Restaurants</p>
-                    </li>
+                    {budgetList.map((item) => (
+                        <li className="flex flex-row gap-0.5 items-center">
+                            <div className={`w-2 h-2 bg-[${item.color}] rounded-full`} />
+                            <p className='text-[12px] text-text-primary-light'>{item.cat}</p>
+                        </li>
+                    ))}
                 </ul>
             </div>
                 <div className='flex flex-col justify-center items-end py-10'>
                     <div className='w-32.5 h-32.5'>
-                    <DoughnutChart amount="12,500" label="Total for month" />
+                    <DoughnutChart amount={budgetList.reduce((sum, item) => sum + item.value, 0)} label="Total for month" chartData={budgetList} />
                 </div>
             </div>
         </div>

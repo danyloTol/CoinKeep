@@ -1,22 +1,36 @@
 import { Doughnut } from 'react-chartjs-2';
 
-interface DoughnutChartProps {
-    amount?: string;
-    label?: string;
+export interface ChartData {
+    cat: string;
+    color: string;
+    value: number;
 }
 
-export const DoughnutChart = ({amount, label}: DoughnutChartProps) => {
+interface DoughnutChartProps {
+    amount: number;
+    label?: string;
+    chartData: ChartData[];
+}
+
+export const DoughnutChart = ({amount, label, chartData}: DoughnutChartProps) => {
     const data = {
-        labels: ['expense', 'balance'],
+        labels: chartData.map((item) => item.cat),
         datasets: [
             {
-                data: [20, 10, 20, 25, 10, 14],
-                backgroundColor: ['#FFD000', '#4C4C4C', '#818181', '#FFEFB3', '#584501', '#987700'],
+                data: chartData.map((item) => item.value),
+                backgroundColor: chartData.map((item) => item.color),
                 borderWidth: 0,
                 cutout: '85%',
             },
         ],
     };
+
+    const formatted = amount.toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    const [integer, decimal] = formatted.split('.');
     
     return (
         <div className="relative w-full h-full">
@@ -24,10 +38,8 @@ export const DoughnutChart = ({amount, label}: DoughnutChartProps) => {
       
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
                 <span className='text-[10px] text-text-secondary-light'>{label}</span>
-                <p className='text-[16px]'>
-                    <span className='text-text-primary-light'>$</span>
-                    <span className='text-text-primary-light'>5,950</span>
-                    <span className='text-text-secondary-light'>.00</span>
+                <p className='text-[16px] text-text-primary-light'>
+                    ${integer}.<span className='text-text-secondary-light'>{decimal}</span>
                     <span></span>
                 </p>
             </div>
