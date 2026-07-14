@@ -2,19 +2,27 @@ import { Bar } from 'react-chartjs-2';
 
 interface BarChatProps {
     labels: string[];
-    values: number[];
+    incomeValues: number[];
+    expenseValues: number[];
 }
 
-export const BarChart = ({labels, values}: BarChatProps) => {
+export const BarChart = ({labels, incomeValues, expenseValues}: BarChatProps) => {
     const data = {
         labels: labels,
         datasets: [
             {
-                label: 'expense',
-                data: values,
-                backgroundColor: '#3b82f6',
+                label: 'income',
+                data: incomeValues,
+                backgroundColor: '#FFD000',
                 borderRadius: 8,
-                barThickness: 20,
+                barThickness: 9,
+            },
+            {
+                label: 'expense',
+                data: expenseValues,
+                backgroundColor: '#987700',
+                borderRadius: 8,
+                barThickness: 9,
             },
         ],
     };
