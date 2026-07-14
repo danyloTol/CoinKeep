@@ -3,7 +3,7 @@ interface WidgetProps {
     lastMonthValue: number;
 }
 
-const WidgetSTotalBalance = ({thisMonthValue, lastMonthValue}: WidgetProps) => {
+const WidgetSIncome = ({thisMonthValue, lastMonthValue}: WidgetProps) => {
     const formatted = thisMonthValue.toLocaleString('en-US', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
@@ -16,7 +16,7 @@ const WidgetSTotalBalance = ({thisMonthValue, lastMonthValue}: WidgetProps) => {
     return (
         <div className="flex flex-col gap-4 py-2 px-6.25 outline-1 outline-text-secondary-light rounded-[30px] overflow-hidden">
             <div>
-                <h3 className="text-[14px]">Total balance</h3>
+                <h3 className="text-[14px]">Income</h3>
             </div>
             <div>
                 <h2 className="text-text-primary-light text-[24px]">${integer}.<span className="text-text-secondary-light">{decimal}</span></h2>
@@ -31,4 +31,4 @@ const WidgetSTotalBalance = ({thisMonthValue, lastMonthValue}: WidgetProps) => {
     )
 }
 
-export default WidgetSTotalBalance
+export default WidgetSIncome

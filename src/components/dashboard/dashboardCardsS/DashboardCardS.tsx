@@ -1,18 +1,21 @@
 import { lazy, Suspense } from "react";
 
 const TotalBalance = lazy(() => import('./WidgetSTotalBalance'));
+const Income = lazy(() => import('./WidgetSIncome'));
 
+// Props for TotalBalance widget
 interface WidgetProps {
-    ThisMonthValue: number;
-    LastMonthValue: number;
+    thisMonthValue: number;
+    lastMonthValue: number;
 }
 
 const WIDGET_MAP: Record<string, React.LazyExoticComponent<React.FC<WidgetProps>>> = {
     totBalance: TotalBalance,
+    income: Income
 };
 
 interface DashboardCardSProps extends WidgetProps {
-    type: 'totBalance';
+    type: 'totBalance' | 'income';
 }
 
 const DashboardCardS = ({ type, ...props }: DashboardCardSProps) => {
@@ -21,7 +24,7 @@ const DashboardCardS = ({ type, ...props }: DashboardCardSProps) => {
     return (
         <div>
             {WidgetComponent ? (
-                <Suspense fallback={<div>Завантаження...</div>}>
+                <Suspense fallback={<div>Loading...</div>}>
                     <WidgetComponent {...props} />
                 </Suspense>
             ) : (
