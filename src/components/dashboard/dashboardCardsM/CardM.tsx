@@ -2,7 +2,7 @@ import { WidgetMBudget } from './WidgetMBudget';
 import { WidgetMSavingGoals } from './WidgetMSavingGoals';
 
 interface CardProps {
-    widget: "budget" | "saving goals";
+    widget: "budget" | "saving goals" | "total_balance";
 }
 
 const DashboardCardM = ({widget}: CardProps) => {
