@@ -13,20 +13,20 @@ const DashboardPage = () => {
             </header>
             {/* SMALL CARDS SECTION */}
             <div className="grid grid-cols-2 gap-2.25">
-                <DashboardCardS type="totBalance" thisMonthValue={12343} lastMonthValue={2344} />
+                <DashboardCardS type="total_balance" thisMonthValue={12343} lastMonthValue={2344} />
                 <DashboardCardS type="income" thisMonthValue={12344} lastMonthValue={2344} />
                 <DashboardCardS type="expense" thisMonthValue={12344} lastMonthValue={2344} />
-                <DashboardCardS type="totSaving" thisMonthValue={12344} lastMonthValue={2344} />
+                <DashboardCardS type="total_saving" thisMonthValue={12344} lastMonthValue={2344} />
             </div>
             {/* MEDIUM CARDS SECTION */}
             <div className="grid grid-cols-1 gap-2.25">
                 <DashboardCardM widget="budget" />
-                <DashboardCardM widget="saving goals" />
+                <DashboardCardM widget="saving_goals" />
             </div>
             {/* LARGE CARDS SECTION */}
             <div className="grid grid-cols-1 gap-2.25">
-                <DashboardCardL widget="money flow" />
-                <DashboardCardL widget="recent transactions" />
+                <DashboardCardL widget="money_flow" />
+                <DashboardCardL widget="recent_transactions" />
             </div>
         </div>
     );

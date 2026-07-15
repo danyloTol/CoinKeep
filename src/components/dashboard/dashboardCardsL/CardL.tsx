@@ -2,7 +2,7 @@ import { WidgetLMoneyFlow } from './WidgetLMoneyFlow';
 import { WidgetLRecentTransactions } from './WidgetLRecentTransactions'
 
 interface CardProps {
-    widget: "money flow" | "recent transactions";
+    widget: "money_flow" | "recent_transactions";
 }
 
 const LegendListClassName = "flex flex-row gap-0.5 items-center";
@@ -10,7 +10,7 @@ const LegendListClassName = "flex flex-row gap-0.5 items-center";
 const DashboardCardL = ({widget}: CardProps) => {
     return (
         <>
-            {(widget === "money flow") ? <WidgetLMoneyFlow /> : (widget === "recent transactions") && <WidgetLRecentTransactions />}
+            {(widget === "money_flow") ? <WidgetLMoneyFlow /> : (widget === "recent_transactions") && <WidgetLRecentTransactions />}
         </>
     );
 };

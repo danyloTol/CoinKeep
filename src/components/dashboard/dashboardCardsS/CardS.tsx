@@ -12,14 +12,14 @@ interface WidgetProps {
 }
 
 const WIDGET_MAP: Record<string, React.LazyExoticComponent<React.FC<WidgetProps>>> = {
-    totBalance: TotalBalance,
+    total_balance: TotalBalance,
     income: Income,
     expense: Expense,
-    totSaving: TotalSaving,
+    total_saving: TotalSaving,
 };
 
 interface DashboardCardSProps extends WidgetProps {
-    type: 'totBalance' | 'income' | 'expense' | 'totSaving';
+    type: 'total_balance' | 'income' | 'expense' | 'total_saving';
 }
 
 const DashboardCardS = ({ type, ...props }: DashboardCardSProps) => {
