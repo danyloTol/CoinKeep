@@ -9,7 +9,7 @@ const budgetList = [
     {cat: 'Gifts', color: '#987700', value: 1236},
 ]
 
-export const WidgetMBudget = () => {
+const WidgetMBudget = () => {
     return (
         <div className="grid grid-cols-[1fr_1fr] px-6.25 w-full outline-1 outline-text-secondary-light rounded-[30px]">
             <div className='flex flex-col gap-4'>
@@ -31,3 +31,5 @@ export const WidgetMBudget = () => {
         </div>
     );
 };
+
+export default WidgetMBudget;

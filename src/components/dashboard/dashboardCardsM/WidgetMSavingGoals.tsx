@@ -6,7 +6,7 @@ const goalsList = [
     {name: 'New house', goal: 90000, amount: 300000},
 ]
 
-export const WidgetMSavingGoals = () => {
+const WidgetMSavingGoals = () => {
     const formatted = (num: number) => {
         return num.toLocaleString('en-US', {
             minimumFractionDigits: 2,
@@ -39,3 +39,5 @@ export const WidgetMSavingGoals = () => {
         </div>
     );
 };
+
+export default WidgetMSavingGoals;
