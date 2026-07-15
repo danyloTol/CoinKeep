@@ -21,7 +21,7 @@ const DashboardPage = () => {
             {/* MEDIUM CARDS SECTION */}
             <div className="grid grid-cols-1 gap-2.25">
                 <DashboardCardM widget="budget" />
-                <DashboardCardM widget="saving_goals" />
+                <DashboardCardM widget="total_balance" thisMonthValue={9900} lastMonthValue={8000} />
             </div>
             {/* LARGE CARDS SECTION */}
             <div className="grid grid-cols-1 gap-2.25">
