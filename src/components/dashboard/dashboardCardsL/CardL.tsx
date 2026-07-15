@@ -1,14 +1,21 @@
 import { WidgetLMoneyFlow } from './WidgetLMoneyFlow';
 import { WidgetLRecentTransactions } from './WidgetLRecentTransactions'
 
-interface CardProps {
-    widget: "money_flow" | "recent_transactions";
+export interface chartData {
+    month: string;
+    income: number;
+    expense: number;
 }
 
-const DashboardCardL = ({widget}: CardProps) => {
+interface CardProps {
+    widget: "money_flow" | "recent_transactions";
+    chartData: chartData[];
+}
+
+const DashboardCardL = ({widget, chartData}: CardProps) => {
     return (
         <>
-            {(widget === "money_flow") ? <WidgetLMoneyFlow /> : (widget === "recent_transactions") && <WidgetLRecentTransactions />}
+            {(widget === "money_flow") ? <WidgetLMoneyFlow chartData={chartData} /> : (widget === "recent_transactions") && <WidgetLRecentTransactions />}
         </>
     );
 };

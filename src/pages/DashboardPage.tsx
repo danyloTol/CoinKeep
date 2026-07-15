@@ -7,7 +7,7 @@ const flowList = [
     {month: "Jan", income: 3000, expense: 2940},
     {month: "Feb", income: 10000, expense: 2840},
     {month: "Mar", income: 7000, expense: 7940},
-    {month: "Apr", income: 6000, expense: 3940},
+    {month: "Apr", income: 6000, expense: 40},
     {month: "May", income: 1000, expense: 2920},
     {month: "Jun", income: 3000, expense: 1940},
 ]
@@ -34,8 +34,8 @@ const DashboardPage = () => {
             </div>
             {/* LARGE CARDS SECTION */}
             <div className="grid grid-cols-1 gap-2.25">
-                <DashboardCardL widget="money_flow" />
-                <DashboardCardL widget="recent_transactions" />
+                <DashboardCardL widget="money_flow" chartData={flowList} />
+                <DashboardCardL widget="recent_transactions" chartData={flowList} />
             </div>
         </div>
     );

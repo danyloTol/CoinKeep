@@ -1,5 +1,15 @@
 import { BarChart } from './BarChart';
 
+export interface chartData {
+    month: string;
+    income: number;
+    expense: number;
+}
+
+interface WidgetProps {
+    chartData: chartData[];
+}
+
 const labels = [
     'Jan',
     'Feb',
@@ -10,10 +20,8 @@ const labels = [
     'Jul',
 ];
 
-const incomeValues = [5000, 3240, 1000, 3000, 1200, 3400, 15000]
-const expenseValues = [5000, 3240, 1000, 3000, 1200, 3400, 15000]
+export const WidgetLMoneyFlow = ({chartData}: WidgetProps) => {
 
-export const WidgetLMoneyFlow = () => {
     return (
         <div className="flex flex-col px-6.25 py-4 w-full outline-1 outline-text-secondary-light rounded-[30px]">
             <div className='flex flex-row justify-between'>
@@ -30,7 +38,7 @@ export const WidgetLMoneyFlow = () => {
                 </div>
             </div>
             <div>
-                <BarChart labels={labels} incomeValues={incomeValues} expenseValues={expenseValues} />
+                <BarChart labels={chartData.map(item => item.month)} incomeValues={chartData.map(item => item.income)} expenseValues={chartData.map(item => item.expense)} />
             </div>
         </div>
     )
