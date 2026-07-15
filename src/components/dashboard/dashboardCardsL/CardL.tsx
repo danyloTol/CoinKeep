@@ -5,8 +5,6 @@ interface CardProps {
     widget: "money_flow" | "recent_transactions";
 }
 
-const LegendListClassName = "flex flex-row gap-0.5 items-center";
-
 const DashboardCardL = ({widget}: CardProps) => {
     return (
         <>
