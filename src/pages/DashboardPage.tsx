@@ -3,6 +3,15 @@ import DashboardCardS from "../components/dashboard/dashboardCardsS/CardS"
 import DashboardCardM from "../components/dashboard/dashboardCardsM/CardM"
 import DashboardCardL from "../components/dashboard/dashboardCardsL/CardL"
 
+const flowList = [
+    {month: "Jan", income: 3000, expense: 2940},
+    {month: "Feb", income: 10000, expense: 2840},
+    {month: "Mar", income: 7000, expense: 7940},
+    {month: "Apr", income: 6000, expense: 3940},
+    {month: "May", income: 1000, expense: 2920},
+    {month: "Jun", income: 3000, expense: 1940},
+]
+
 const DashboardPage = () => {
     return (
         <div className="flex flex-col gap-2.25 w-full px-4 pt-3.5">
