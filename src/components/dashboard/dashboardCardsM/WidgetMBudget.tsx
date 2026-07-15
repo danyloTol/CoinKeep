@@ -17,7 +17,7 @@ export const WidgetMBudget = () => {
                 <ul>
                     {budgetList.map((item) => (
                         <li className="flex flex-row gap-0.5 items-center">
-                            <div className={`w-2 h-2 bg-[${item.color}] rounded-full`} />
+                            <div className={`w-2 h-2 rounded-full`} style={{ backgroundColor: item.color}} />
                             <p className='text-[12px] text-text-primary-light'>{item.cat}</p>
                         </li>
                     ))}
